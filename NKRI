@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Struktur Organisasi LSM Laskar NKRI</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      background: #f4f4f4;
+      color: #222;
+    }
+    header {
+      background: #b30000;
+      color: white;
+      text-align: center;
+      padding: 25px;
+    }
+    .container {
+      max-width: 1000px;
+      margin: 20px auto;
+      padding: 20px;
+    }
+    .card {
+      background: white;
+      padding: 20px;
+      margin-bottom: 20px;
+      border-radius: 12px;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+    }
+    h2 {
+      color: #b30000;
+      border-bottom: 2px solid #ddd;
+      padding-bottom: 8px;
+    }
+    ul {
+      list-style: none;
+      padding: 0;
+    }
+    li {
+      padding: 8px 0;
+      border-bottom: 1px solid #eee;
+    }
+    footer {
+      text-align: center;
+      padding: 15px;
+      background: #222;
+      color: white;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <img id="logoPreview" src="https://via.placeholder.com/120" alt="Logo LSM" style="width:120px;height:120px;border-radius:50%;object-fit:cover;border:4px solid white;">
+    <h1>LSM LASKAR NKRI</h1>
+    <p>Struktur Organisasi Kepengurusan</p>
+    <div style="margin-top:10px;">
+      <label style="background:white;color:#b30000;padding:8px 14px;border-radius:8px;cursor:pointer;font-weight:bold;">
+        Ubah Logo
+        <input type="file" accept="image/*" onchange="updateLogo(event)" hidden>
+      </label>
+    </div>
+  </header>
+
+  <div class="container">
+    <div class="card">
+      <h2>Struktur Inti</h2>
+      <ul>
+        <li><strong>Penasehat:</strong> Muhammad Syam'un</li>
+        <li><strong>Ketua:</strong> Budianto</li>
+        <li><strong>Wakil Ketua 1:</strong> Supandi</li>
+        <li><strong>Wakil Ketua 2:</strong> Abdul Aziz</li>
+        <li><strong>Sekretaris 1:</strong> Agus Purnama</li>
+        <li><strong>Sekretaris 2:</strong> Rifki Hermawan</li>
+        <li><strong>Bendahara 1:</strong> Dwi Sischa Yanti</li>
+        <li><strong>Bendahara 2:</strong> Sumarni</li>
+      </ul>
+    </div>
+
+    <div class="card">
+      <h2>Kontak Organisasi</h2>
+      <ul>
+        <li><strong>Email:</strong> laskarnkridpcjombang1@gmail.com</li>
+        <li><strong>WhatsApp:</strong> +62 831-4103-2963</li>
+        <li><strong>Alamat:</strong> Pasar Keranggot, Sukmajaya, Jombang</li>
+      </ul>
+    </div>
+
+    <div class="card">
+      <h2>Galeri Kegiatan</h2>
+      <div style="text-align:center;">
+        <img id="fotoPreview" src="https://via.placeholder.com/500x300" alt="Foto Kegiatan" style="width:100%;max-width:500px;border-radius:12px;object-fit:cover;">
+        <br><br>
+        <label style="background:#b30000;color:white;padding:8px 14px;border-radius:8px;cursor:pointer;font-weight:bold;">
+          Ubah Foto Kegiatan
+          <input type="file" accept="image/*" onchange="updateFoto(event)" hidden>
+        </label>
+      </div>
+    </div>
+
+    <div class="card">
+      <h2>Form Pendaftaran Anggota</h2>
+      <form>
+        <input type="text" placeholder="Nama Lengkap" style="width:100%;padding:10px;margin-bottom:10px;">
+        <input type="text" placeholder="Nomor WhatsApp" style="width:100%;padding:10px;margin-bottom:10px;">
+        <textarea placeholder="Alamat" style="width:100%;padding:10px;margin-bottom:10px;"></textarea>
+        <button type="button" onclick="kirimWA()" style="background:#25D366;color:white;border:none;padding:12px 20px;border-radius:8px;cursor:pointer;">Kirim ke WhatsApp</button>
+      </form>
+    </div>
+
+    <div class="card">
+      <h2>Visi</h2>
+      <p>Menjadi organisasi masyarakat yang menjaga persatuan, membantu masyarakat, dan menjunjung tinggi nilai NKRI.</p>
+    </div>
+  </div>
+
+  <footer>
+    <p>© 2026 LSM Laskar NKRI - Semua Hak Dilindungi</p>
+  </footer>
+  <script>
+    function updateLogo(event) {
+      const file = event.target.files[0];
+      if (file) {
+        document.getElementById('logoPreview').src = URL.createObjectURL(file);
+      }
+    }
+
+    function updateFoto(event) {
+      const file = event.target.files[0];
+      if (file) {
+        document.getElementById('fotoPreview').src = URL.createObjectURL(file);
+      }
+    }
+
+    function kirimWA() {
+      window.open('https://wa.me/6283141032963', '_blank');
+    }
+  </script>
+</body>
+</html>
